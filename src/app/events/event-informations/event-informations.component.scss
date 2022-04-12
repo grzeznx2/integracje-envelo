@@ -1,0 +1,15 @@
+.event-informations {
+  &__user-tabs {
+    display: flex;
+    list-style: none;
+  }
+
+  &__user-tab {
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-secondary-red);
+    }
+  }
+}
