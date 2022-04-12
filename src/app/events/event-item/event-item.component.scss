@@ -1,0 +1,27 @@
+.event-item {
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    padding: 1rem;
+  }
+
+  &__name {
+  }
+  &__address {
+  }
+  &__date-container {
+  }
+  &__date {
+  }
+  &__time {
+  }
+  &__buttons {
+  }
+  &__decision {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.6rem;
+    color: var(--color-primary-red);
+  }
+}
