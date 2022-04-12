@@ -1,0 +1,59 @@
+@import "/src/styles/variables";
+
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  cursor: pointer;
+  border: 0.1rem solid var(--color-primary-red);
+
+  &__primary {
+    background-color: var(--color-primary-red);
+    color: var(--color-primary-white);
+
+    &:hover {
+      background-color: var(--color-secondary-red);
+      border: 0.1rem solid var(--color-secondary-red);
+    }
+  }
+
+  &__secondary {
+    background-color: var(--color-primary-white);
+    color: var(--color-primary-red);
+
+    &:hover {
+      background-color: var(--color-primary-red);
+      color: var(--color-primary-white);
+    }
+  }
+
+  &__small {
+    padding: 0.5rem 2rem;
+  }
+
+  &__medium {
+    padding: 0.75rem 2rem;
+  }
+
+  &__large {
+    padding: 1rem 2rem;
+  }
+
+  &:focus {
+    outline: 0.2rem solid var(--color-secondary-gray-2);
+  }
+
+  &:active {
+    filter: brightness(115%);
+  }
+
+  &:disabled {
+    background-color: var(--color-secondary-gray-3);
+    color: var(--color-secondary-gray-4);
+    border: 0.1rem solid var(--color-secondary-gray-3);
+    cursor: default;
+
+    &:active {
+      filter: none;
+    }
+  }
+}
