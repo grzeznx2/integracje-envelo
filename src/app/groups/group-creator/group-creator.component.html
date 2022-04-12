@@ -1,0 +1,27 @@
+
+<button (click)="createGroup()" [disabled]="form.invalid || selectedUsers.length === 0" class="btn btn__primary btn__medium">Dodaj</button>
+<div class="group-creator">
+  <div>
+
+  <form [formGroup]="form">
+    <label for="group-name">Nazwa:</label>
+    <input id="group-name" type="text" formControlName="name">
+    <ng-container *ngIf="form.controls['name'].touched">
+    <div *ngIf="form.controls['name'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+</form>
+<label for="user-search">Wyszukaj użytkowników:</label>
+<input id="user-search" type="search" [formControl]="userSearch">
+<div>
+  <ng-container *ngIf="users$ | async as users">
+    <div class="group-creator__user" *ngFor="let user of users" (click)="selectUser(user)">{{user.firstName}} {{user.secondName}}</div>
+  </ng-container>
+</div>
+</div>
+<div>
+  Wybrani użytkownicy:
+  <div class="group-creator__user" *ngFor="let user of selectedUsers" >{{user.firstName}} {{user.secondName}} <button (click)="removeUser(user.id)">X</button></div>
+</div>
+</div>
