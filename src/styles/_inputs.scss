@@ -1,0 +1,53 @@
+@import "/src/styles/variables";
+
+.input {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  border: 0.063rem solid var(--color-secondary-gray-3);
+
+  &:hover {
+    outline: 0.1rem solid var(--color-secondary-gray-1);
+  }
+
+  &:focus {
+    outline: 0.1rem solid var(--color-secondary-gray-1);
+  }
+
+  &.invalid {
+    border: 0.063rem solid var(--color-primary-red);
+
+    &:hover {
+      outline: 0.1rem solid var(--color-primary-red);
+    }
+
+    &:focus {
+      outline: 0.1rem solid var(--color-primary-red);
+    }
+  }
+
+  &:disabled {
+    background-color: var(--color-secondary-gray-5);
+    color: var(--color-secondary-gray-3);
+    border: 0.063rem solid var(--color-secondary-gray-4);
+
+    &:hover {
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__msg {
+    margin: 0;
+
+    &--error {
+      color: var(--color-primary-red);
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+  }
+}
