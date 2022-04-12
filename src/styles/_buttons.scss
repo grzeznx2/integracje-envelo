@@ -57,3 +57,28 @@
     }
   }
 }
+
+.btn-flat {
+  padding: 0.5rem 0.6rem;
+  font-weight: 100;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--primary {
+    color: var(--color-primary-red);
+
+    &:hover {
+      color: var(--color-secondary-red);
+    }
+  }
+
+  &--secondary {
+    color: var(--color-secondary-gray-2);
+
+    &:hover {
+      color: var(--color-secondary-red);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="event-item">
+  <div class="event-item__name">{{name}}</div>
+  <div class="event-item__address">{{address}}</div>
+  <div class="event-item__date-container">
+    <span class="event-item__date">{{startDate | date: 'medium'}}</span>
+  </div>
+  <div class="event-item__buttons">
+    <ng-container *ngIf="decision==='NOT DECIDED'">
+      <button class="btn-flat btn-flat--primary" (click)="accept()">Akceptuj</button>
+      <button class="btn-flat btn-flat--primary" (click)="decline()">Odrzuć</button>
+      <button class="btn-flat btn-flat--primary" (click)="consider()">Być może</button>
+    </ng-container>
+    <ng-container *ngIf="decision==='YES'">
+      <span class="event-item__decision">Zaakceptowane</span>
+      <button class="btn-flat btn-flat--secondary" (click)="decline()">Odrzuć</button>
+      <button class="btn-flat btn-flat--secondary" (click)="consider()">Być może</button>
+    </ng-container>
+    <ng-container *ngIf="decision==='NO'">
+      <button class="btn-flat btn-flat--secondary" (click)="accept()">Akceptuj</button>
+      <span class="event-item__decision">Odrzucone</span>
+      <button class="btn-flat btn-flat--secondary" (click)="consider()">Być może</button>
+    </ng-container>
+    <ng-container *ngIf="decision==='MAYBE'">
+      <button class="btn-flat btn-flat--secondary" (click)="accept()">Akceptuj</button>
+      <button class="btn-flat btn-flat--secondary" (click)="decline()">Odrzuć</button>
+      <span class="event-item__decision">Być może</span>
+    </ng-container>
+  </div>
+</div>
