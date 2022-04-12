@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventItemComponent } from './events/event-item/event-item.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MyEventsComponent } from './events/my-events/my-events.component';
+import { PastEventsComponent } from './events/past-events/past-events.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     HeaderComponent,
     EventListComponent,
     EventItemComponent,
-    NavigationComponent
+    NavigationComponent,
+    MyEventsComponent,
+    PastEventsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
