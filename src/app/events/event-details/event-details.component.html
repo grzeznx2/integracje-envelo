@@ -1,10 +1,27 @@
 <ng-container *ngIf="event$ | async as event">
-  <a routerLink="{{event.id}}">Informacje</a>
-  <a routerLink="posts">Posty</a>
+  <div class="event-details">
+
+    <a routerLink="{{event.id}}">Informacje</a>
+    <a routerLink="posts">Posty</a>
   <div>Nazwa: {{event.title}}</div>
   <div>Podsumowanie: {{event.description}}</div>
   <div>Min. liczba uczestników: {{event.minMembers}}</div>
   <div>Max. liczba uczestników: {{event.maxMembers}}</div>
   <div>Data rozpoczęcia: {{event.startDate | date: 'medium'}}</div>
   <div>Adres: {{event.eventPlace.street}} {{event.eventPlace.streetNumber}} / {{event.eventPlace.localNumber}}, {{event.eventPlace.postcode}} {{event.eventPlace.city}}</div>
+  <ul class="event-details__user-tabs">
+    <li class="event-details__user-tab" (click)="switchDecision('YES')">
+      <a>Wezmą udział</a>
+    </li>
+    <li class="event-details__user-tab" (click)="switchDecision('NO')">
+      <a>Nie wezmą udziału</a>
+    </li>
+    <li class="event-details__user-tab" (click)="switchDecision('NOT DECIDED')">
+      <a>Zaproszeni</a>
+    </li>
+    <li class="event-details__user-tab" (click)="switchDecision('MAYBE')">
+      <a>Niezdecydowani</a>
+    </li>
+  </ul>
+</div>
 </ng-container>
