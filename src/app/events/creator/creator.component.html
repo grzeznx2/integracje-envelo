@@ -1,4 +1,5 @@
-<form [formGroup]="firstForm">
+
+<form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="nextStep()">
   <label for="event-name">Nazwa:</label>
   <input id="event-name" type="text" formControlName="name">
   <ng-container *ngIf="firstForm.controls['name'].touched">
@@ -10,6 +11,13 @@
   <textarea id="event-descritpion" type="text" formControlName="description"></textarea>
   <ng-container *ngIf="firstForm.controls['description'].touched">
     <div *ngIf="firstForm.controls['description'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-start-date">Data rozpoczęcia:</label>
+  <input id="event-start-date" type="date" formControlName="startDate">
+  <ng-container *ngIf="firstForm.controls['startDate'].touched">
+    <div *ngIf="firstForm.controls['startDate'].errors?.['required']">
       Pole wymagane
     </div>
   </ng-container>
