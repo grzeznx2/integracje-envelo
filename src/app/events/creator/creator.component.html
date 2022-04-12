@@ -32,7 +32,7 @@
 </form>
 
 
-<form [formGroup]="secondForm" *ngIf="step===2" (ngSubmit)="firstFormSubmit()">
+<form [formGroup]="secondForm" *ngIf="step===2" (ngSubmit)="secondFormSubmit()">
   <label for="event-city">Miejscowość:</label>
   <input id="event-city" type="text" formControlName="city">
   <ng-container *ngIf="secondForm.controls['city'].touched">
@@ -68,12 +68,25 @@
       Pole wymagane
     </div>
   </ng-container>
-  <label for="event-postal-code">Kod pocztowy:</label>
-  <input id="event-postal-code" type="text" formControlName="postalcode">
-  <ng-container *ngIf="secondForm.controls['postalcode'].touched">
-    <div *ngIf="secondForm.controls['postalcode'].errors?.['required']">
+  <label for="event-post-code">Kod pocztowy:</label>
+  <input id="event-post-code" type="text" formControlName="postcode">
+  <ng-container *ngIf="secondForm.controls['postcode'].touched">
+    <div *ngIf="secondForm.controls['postcode'].errors?.['required']">
       Pole wymagane
     </div>
   </ng-container>
   <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
+</form>
+
+<form [formGroup]="thirdForm" *ngIf="step===3">
+  <label for="event-min-members">Min. liczba osób:</label>
+  <input id="event-min-members" type="number" formControlName="minMembers">
+
+  <label for="event-max-members">Max. liczba osób:</label>
+  <input id="event-max-members" type="number" formControlName="maxMembers">
+
+  <label for="event-deadline-decision">Deadline odpowiedzi:</label>
+  <input id="event-deadline-decision" type="date" formControlName="deadlineDecision">
+
+  <button [disabled]="thirdForm.invalid" class="btn btn__primary btn__medium">Publikuj</button>
 </form>

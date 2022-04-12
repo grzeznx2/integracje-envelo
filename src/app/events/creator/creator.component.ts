@@ -10,13 +10,16 @@ export class CreatorComponent implements OnInit {
   public step = 1;
   public firstForm!: FormGroup;
   public secondForm!: FormGroup;
+  public thirdForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this._createFirstForm();
     this._createSecondForm();
-    this.firstForm.valueChanges.subscribe(console.log);
+    this._createThirdForm();
+    // this.firstForm.valueChanges.subscribe(console.log);
+    this.secondForm.valueChanges.subscribe(console.log);
   }
 
   firstFormSubmit() {
@@ -52,6 +55,14 @@ export class CreatorComponent implements OnInit {
       streetNumber: ['', Validators.required],
       localNumber: ['', Validators.required],
       postcode: ['', Validators.required],
+    });
+  }
+
+  private _createThirdForm() {
+    this.thirdForm = this.fb.group({
+      minMembers: [],
+      maxMembers: [],
+      deadlineDecision: [],
     });
   }
 }
