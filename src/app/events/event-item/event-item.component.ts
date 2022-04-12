@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class EventItemComponent implements OnInit {
   @Input() name!: string;
   @Input() address!: string;
-  @Input() startDate!: string;
-  @Input() startTime!: string;
+  @Input() startDate!: Date;
+  @Input() startTime!: Date;
   constructor() {}
 
   ngOnInit(): void {}
