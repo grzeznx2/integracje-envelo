@@ -2,8 +2,7 @@
   <div class="event-item__name">{{name}}</div>
   <div class="event-item__address">{{address}}</div>
   <div class="event-item__date-container">
-    <span class="event-item__date">{{startDate}}</span>
-    <span class="event-item__time">{{startTime}}</span>
+    <span class="event-item__date">{{startDate | date: 'medium'}}</span>
   </div>
   <div class="event-item__buttons">
     <button>Akceptuj</button>
