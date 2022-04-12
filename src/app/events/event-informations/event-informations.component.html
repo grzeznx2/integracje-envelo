@@ -1,10 +1,5 @@
 <ng-container *ngIf="event$ | async as event">
-  <div class="event-details">
-
-    <a routerLink="details">Informacje</a>
-    <a routerLink="posts">Posty</a>
-    <router-outlet></router-outlet>
-  <!-- <div>Nazwa: {{event.title}}</div>
+<div>Nazwa: {{event.title}}</div>
   <div>Podsumowanie: {{event.description}}</div>
   <div>Min. liczba uczestników: {{event.minMembers}}</div>
   <div>Max. liczba uczestników: {{event.maxMembers}}</div>
@@ -23,6 +18,5 @@
     <li class="event-details__user-tab" (click)="switchDecision('MAYBE')">
       <a>Niezdecydowani</a>
     </li>
-  </ul> -->
-</div>
+  </ul>
 </ng-container>

@@ -16,6 +16,7 @@ import { GroupsComponent } from './groups/groups.component';
 import { GroupCreatorComponent } from './groups/group-creator/group-creator.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { PostCreatorComponent } from './posts/post-creator/post-creator.component';
+import { EventInformationsComponent } from './events/event-informations/event-informations.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PostCreatorComponent } from './posts/post-creator/post-creator.componen
     GroupCreatorComponent,
     EventDetailsComponent,
     PostCreatorComponent,
+    EventInformationsComponent,
   ],
   imports: [
     BrowserModule,
