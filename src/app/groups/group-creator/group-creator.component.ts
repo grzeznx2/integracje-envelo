@@ -38,6 +38,10 @@ export class GroupCreatorComponent implements OnInit {
     this.selectedUsers = [...this.selectedUsers, user];
   }
 
+  removeUser(id: number) {
+    this.selectedUsers = this.selectedUsers.filter((user) => user.id !== id);
+  }
+
   private _createForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
