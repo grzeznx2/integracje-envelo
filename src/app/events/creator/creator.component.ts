@@ -16,6 +16,13 @@ export class CreatorComponent implements OnInit {
   ngOnInit(): void {
     this._createFirstForm();
     this._createSecondForm();
+    this.firstForm.valueChanges.subscribe(console.log);
+  }
+
+  firstFormSubmit() {
+    if (this.firstForm.valid) {
+      this.nextStep();
+    }
   }
 
   nextStep() {

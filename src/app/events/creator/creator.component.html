@@ -1,5 +1,5 @@
 
-<form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="nextStep()">
+<form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="firstFormSubmit()">
   <label for="event-name">Nazwa:</label>
   <input id="event-name" type="text" formControlName="name">
   <ng-container *ngIf="firstForm.controls['name'].touched">
@@ -21,4 +21,5 @@
       Pole wymagane
     </div>
   </ng-container>
+  <button [disabled]="firstForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
 </form>
