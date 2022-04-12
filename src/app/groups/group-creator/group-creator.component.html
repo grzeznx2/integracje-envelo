@@ -1,7 +1,7 @@
 
+<button (click)="createGroup()" [disabled]="form.invalid || selectedUsers.length === 0" class="btn btn__primary btn__medium">Dodaj</button>
 <div class="group-creator">
   <div>
-
 
   <form [formGroup]="form">
     <label for="group-name">Nazwa:</label>

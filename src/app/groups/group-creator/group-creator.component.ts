@@ -42,6 +42,10 @@ export class GroupCreatorComponent implements OnInit {
     this.selectedUsers = this.selectedUsers.filter((user) => user.id !== id);
   }
 
+  createGroup() {
+    console.log(this.selectedUsers);
+  }
+
   private _createForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
