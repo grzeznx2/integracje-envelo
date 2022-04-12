@@ -1,4 +1,5 @@
-<div>
+<div class="event-list">
+  <h2 class="event-list__heading">Lista wydarzeń, na które zostałeś zaproszony</h2>
   <ng-container *ngIf="events$ | async as events">
 
       <app-event-item *ngFor="let event of events"
