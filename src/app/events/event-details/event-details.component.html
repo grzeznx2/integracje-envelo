@@ -1,4 +1,6 @@
 <ng-container *ngIf="event$ | async as event">
+  <a routerLink="{{event.id}}">Informacje</a>
+  <a routerLink="posts">Posty</a>
   <div>Nazwa: {{event.title}}</div>
   <div>Podsumowanie: {{event.description}}</div>
   <div>Min. liczba uczestników: {{event.minMembers}}</div>
