@@ -2,6 +2,7 @@
   <ng-container *ngIf="events$ | async as events">
 
       <app-event-item *ngFor="let event of events"
+      [id]="event.id"
       [name]="event.name"
       [address]="event.address"
       [startDate]="event.startDate"
