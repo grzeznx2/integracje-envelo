@@ -18,6 +18,7 @@ export class GroupCreatorComponent implements OnInit {
   public form!: FormGroup;
   public userSearch: FormControl = new FormControl('');
   public users$: Observable<User[]> = of([]);
+  public selectedUsers: User[] = [];
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
@@ -31,6 +32,10 @@ export class GroupCreatorComponent implements OnInit {
 
   searchUsers() {
     this.userService.getUsersBySecondName(this.userSearch.value);
+  }
+
+  selectUser(user: User) {
+    this.selectedUsers = [...this.selectedUsers, user];
   }
 
   private _createForm() {
