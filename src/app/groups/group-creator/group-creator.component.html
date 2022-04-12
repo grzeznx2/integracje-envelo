@@ -9,3 +9,6 @@
 </form>
 <label for="user-search">Wyszukaj użytkowników:</label>
 <input id="user-search" type="search" [formControl]="userSearch">
+<ng-container *ngIf="users$ | async as users">
+  <div *ngFor="let user of users">{{user.firstName}} {{user.secondName}}</div>
+</ng-container>

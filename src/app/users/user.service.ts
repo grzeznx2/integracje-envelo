@@ -26,8 +26,11 @@ export class UserService {
   }
 
   public getUsersBySecondName(secondName: string) {
+    console.log(secondName);
     this.http
-      .get<User[]>(`http://localhost:3000/users?secondName=${secondName}`)
+      .get<User[]>(`http://localhost:3000/users?secondName_like=${secondName}`)
+      // .get<User[]>(`http://localhost:3000/users`)
+      .pipe(tap(console.log))
       .subscribe((users) => this.users$.next(users));
   }
 }
