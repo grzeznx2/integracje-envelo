@@ -1,10 +1,11 @@
 <div>
-  <ng-container *ngFor="let event of eventList">
-    <app-event-item
-    [name]="event.name"
-    [address]="event.address"
-    [startDate]="event.startDate"
-    [startTime]="event.startTime"
-    ></app-event-item>
-  </ng-container>
+  <ng-container *ngIf="events$ | async as events">
+
+      <app-event-item *ngFor="let event of events"
+      [name]="event.name"
+      [address]="event.address"
+      [startDate]="event.startDate"
+      [startTime]="event.startTime"
+      ></app-event-item>
+    </ng-container>
 </div>
