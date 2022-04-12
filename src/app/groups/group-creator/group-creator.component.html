@@ -1,1 +1,9 @@
-<p>group-creator works!</p>
+<form [formGroup]="form">
+  <label for="group-name">Nazwa:</label>
+  <input id="group-name" type="text" formControlName="name">
+  <ng-container *ngIf="form.controls['name'].touched">
+    <div *ngIf="form.controls['name'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+</form>
