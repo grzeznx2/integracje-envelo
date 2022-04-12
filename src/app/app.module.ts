@@ -12,6 +12,7 @@ import { MyEventsComponent } from './events/my-events/my-events.component';
 import { PastEventsComponent } from './events/past-events/past-events.component';
 import { CreatorComponent } from './events/creator/creator.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GroupsComponent } from './groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MyEventsComponent,
     PastEventsComponent,
     CreatorComponent,
+    GroupsComponent,
   ],
   imports: [
     BrowserModule,

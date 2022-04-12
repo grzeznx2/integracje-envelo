@@ -4,6 +4,7 @@ import { CreatorComponent } from './events/creator/creator.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { MyEventsComponent } from './events/my-events/my-events.component';
 import { PastEventsComponent } from './events/past-events/past-events.component';
+import { GroupsComponent } from './groups/groups.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'creator',
     component: CreatorComponent,
+  },
+  {
+    path: 'groups',
+    component: GroupsComponent,
   },
   {
     path: 'my-events',
