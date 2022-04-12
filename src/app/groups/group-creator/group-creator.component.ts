@@ -8,6 +8,7 @@ import {
 import { debounceTime, Observable, of } from 'rxjs';
 import { User } from 'src/app/users/models/user.model';
 import { UserService } from 'src/app/users/user.service';
+import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-group-creator',
@@ -20,7 +21,11 @@ export class GroupCreatorComponent implements OnInit {
   public users$: Observable<User[]> = of([]);
   public selectedUsers: User[] = [];
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private groupService: GroupService
+  ) {}
 
   ngOnInit(): void {
     this._createForm();
@@ -43,7 +48,11 @@ export class GroupCreatorComponent implements OnInit {
   }
 
   createGroup() {
-    console.log(this.selectedUsers);
+    const userIds = this.selectedUsers.map((user) => user.id);
+    this.groupService.createGroup({
+      name: this.form.controls['name'].value,
+      userIds,
+    });
   }
 
   private _createForm() {
