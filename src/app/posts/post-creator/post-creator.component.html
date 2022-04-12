@@ -1,1 +1,12 @@
-<p>post-creator works!</p>
+
+  <form [formGroup]="form">
+    <label for="post-description">Treść:</label>
+    <textarea id="post-description" type="text" formControlName="description"></textarea>
+    <ng-container *ngIf="form.controls['description'].touched">
+      <div *ngIf="form.controls['description'].errors?.['required']">
+        Pole wymagane
+      </div>
+    </ng-container>
+    <button class="btn btn__primary btn__medium">Dodaj</button>
+    </form>
+
