@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, of } from 'rxjs';
+import { GroupService } from 'src/app/groups/group.service';
+import { Group } from 'src/app/groups/models/group.model';
 
 @Component({
   selector: 'app-creator',
@@ -11,15 +14,16 @@ export class CreatorComponent implements OnInit {
   public firstForm!: FormGroup;
   public secondForm!: FormGroup;
   public thirdForm!: FormGroup;
+  public groups$: Observable<Group[]> = of([]);
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private groupService: GroupService) {}
 
   ngOnInit(): void {
     this._createFirstForm();
     this._createSecondForm();
     this._createThirdForm();
-    // this.firstForm.valueChanges.subscribe(console.log);
-    this.secondForm.valueChanges.subscribe(console.log);
+    this.groupService.init();
+    this.groups$ = this.groupService.groups;
   }
 
   firstFormSubmit() {
