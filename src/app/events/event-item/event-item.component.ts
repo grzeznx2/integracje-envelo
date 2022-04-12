@@ -18,15 +18,17 @@ export class EventItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  private _updateDecision(decision: Decision) {
+    this.eventService.updateEventDecision(this.id, decision);
+  }
+
   accept() {
-    this.eventService.updateEventDecision(this.id, 'YES');
+    this._updateDecision('YES');
   }
-
   decline() {
-    this.eventService.updateEventDecision(this.id, 'NO');
+    this._updateDecision('NO');
   }
-
   consider() {
-    this.eventService.updateEventDecision(this.id, 'MAYBE');
+    this._updateDecision('MAYBE');
   }
 }
