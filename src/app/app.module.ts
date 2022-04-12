@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupCreatorComponent } from './groups/group-creator/group-creator.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { PostCreatorComponent } from './posts/post-creator/post-creator.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
     GroupsComponent,
     GroupCreatorComponent,
     EventDetailsComponent,
+    PostCreatorComponent,
   ],
   imports: [
     BrowserModule,
