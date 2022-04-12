@@ -1,6 +1,7 @@
-<a routerLink="{{id}}">
 <div class="event-item">
+  <a routerLink="{{id}}">
   <div class="event-item__name">{{title}}</div>
+</a>
   <div class="event-item__address">{{address}}</div>
   <div class="event-item__date-container">
     <span class="event-item__date">{{startDate | date: 'medium'}}</span>
@@ -28,4 +29,4 @@
     </ng-container>
   </div>
 </div>
-</a>
+
