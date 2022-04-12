@@ -1,1 +1,10 @@
-<p>creator works!</p>
+<form [formGroup]="firstForm">
+  <label for="event-name">Nazwa:</label>
+  <input id="event-name" type="text" formControlName="name">
+  <ng-container *ngIf="firstForm.controls['name'].touched">
+    <div *ngIf="firstForm.controls['name'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+
+</form>
