@@ -7,6 +7,6 @@
         Pole wymagane
       </div>
     </ng-container>
-    <button class="btn btn__primary btn__medium">Dodaj</button>
+    <button [disabled]="form.invalid" class="btn btn__primary btn__medium">Dodaj</button>
     </form>
 
