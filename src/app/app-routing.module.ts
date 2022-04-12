@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatorComponent } from './events/creator/creator.component';
+import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { MyEventsComponent } from './events/my-events/my-events.component';
 import { PastEventsComponent } from './events/past-events/past-events.component';
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'invitations',
     component: EventListComponent,
+  },
+  {
+    path: 'invitations/:id',
+    component: EventDetailsComponent,
   },
   {
     path: 'creator',

@@ -1,0 +1,10 @@
+<ng-container *ngIf="event$ | async as event">
+  <a routerLink="{{event.id}}">Informacje</a>
+  <a routerLink="posts">Posty</a>
+  <div>Nazwa: {{event.title}}</div>
+  <div>Podsumowanie: {{event.description}}</div>
+  <div>Min. liczba uczestników: {{event.minMembers}}</div>
+  <div>Max. liczba uczestników: {{event.maxMembers}}</div>
+  <div>Data rozpoczęcia: {{event.startDate | date: 'medium'}}</div>
+  <div>Adres: {{event.eventPlace.street}} {{event.eventPlace.streetNumber}} / {{event.eventPlace.localNumber}}, {{event.eventPlace.postcode}} {{event.eventPlace.city}}</div>
+</ng-container>

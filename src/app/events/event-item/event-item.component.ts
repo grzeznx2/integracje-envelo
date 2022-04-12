@@ -8,7 +8,7 @@ import { Decision } from '../models/event-item.model';
   styleUrls: ['./event-item.component.scss'],
 })
 export class EventItemComponent implements OnInit {
-  @Input() name!: string;
+  @Input() title!: string;
   @Input() id!: number;
   @Input() address!: string;
   @Input() startDate!: Date;
