@@ -7,12 +7,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./creator.component.scss'],
 })
 export class CreatorComponent implements OnInit {
+  public step = 1;
   public firstForm!: FormGroup;
+  public secondForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this._createFirstForm();
+    this._createSecondForm();
+  }
+
+  nextStep() {
+    this.step++;
   }
 
   private _createFirstForm() {
@@ -21,6 +28,17 @@ export class CreatorComponent implements OnInit {
       description: ['', Validators.required],
       startDate: ['', Validators.required],
       startTime: ['', Validators.required],
+    });
+  }
+
+  private _createSecondForm() {
+    this.secondForm = this.fb.group({
+      city: ['', Validators.required],
+      placeName: ['', Validators.required],
+      street: ['', Validators.required],
+      streetNumber: ['', Validators.required],
+      localNumber: ['', Validators.required],
+      postcode: ['', Validators.required],
     });
   }
 }
