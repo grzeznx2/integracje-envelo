@@ -13,6 +13,7 @@ import { PastEventsComponent } from './events/past-events/past-events.component'
 import { CreatorComponent } from './events/creator/creator.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GroupsComponent } from './groups/groups.component';
+import { GroupCreatorComponent } from './groups/group-creator/group-creator.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GroupsComponent } from './groups/groups.component';
     PastEventsComponent,
     CreatorComponent,
     GroupsComponent,
+    GroupCreatorComponent,
   ],
   imports: [
     BrowserModule,
