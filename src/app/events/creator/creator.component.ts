@@ -25,6 +25,12 @@ export class CreatorComponent implements OnInit {
     }
   }
 
+  secondFormSubmit() {
+    if (this.secondForm.valid) {
+      this.nextStep();
+    }
+  }
+
   nextStep() {
     this.step++;
   }

@@ -30,3 +30,50 @@
   </ng-container>
   <button [disabled]="firstForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
 </form>
+
+
+<form [formGroup]="secondForm" *ngIf="step===2" (ngSubmit)="firstFormSubmit()">
+  <label for="event-city">Miejscowość:</label>
+  <input id="event-city" type="text" formControlName="city">
+  <ng-container *ngIf="secondForm.controls['city'].touched">
+    <div *ngIf="secondForm.controls['city'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-place-name">Nazwa miejsca:</label>
+  <input id="event-place-name" type="text" formControlName="placeName">
+  <ng-container *ngIf="secondForm.controls['placeName'].touched">
+    <div *ngIf="secondForm.controls['placeName'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-street">Ulica:</label>
+  <input id="event-street" type="text" formControlName="street">
+  <ng-container *ngIf="secondForm.controls['street'].touched">
+    <div *ngIf="secondForm.controls['street'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-street-number">Nr domu:</label>
+  <input id="event-street-number" type="text" formControlName="streetNumber">
+  <ng-container *ngIf="secondForm.controls['streetNumber'].touched">
+    <div *ngIf="secondForm.controls['streetNumber'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-local-number">Nr mieszkania:</label>
+  <input id="event-local-number" type="text" formControlName="localNumber">
+  <ng-container *ngIf="secondForm.controls['localNumber'].touched">
+    <div *ngIf="secondForm.controls['localNumber'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <label for="event-postal-code">Kod pocztowy:</label>
+  <input id="event-postal-code" type="text" formControlName="postalcode">
+  <ng-container *ngIf="secondForm.controls['postalcode'].touched">
+    <div *ngIf="secondForm.controls['postalcode'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
+  <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
+</form>
