@@ -40,6 +40,10 @@ export class GroupCreatorComponent implements OnInit {
   }
 
   selectUser(user: User) {
+    const userExists = this.selectedUsers.find(
+      (searchedUser) => searchedUser === user
+    );
+    if (userExists) return;
     this.selectedUsers = [...this.selectedUsers, user];
   }
 
