@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { debounceTime } from 'rxjs';
+import { UserService } from 'src/app/users/user.service';
 
 @Component({
   selector: 'app-group-creator',
@@ -8,11 +15,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class GroupCreatorComponent implements OnInit {
   public form!: FormGroup;
+  public userSearch: FormControl = new FormControl('');
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private userSerive: UserService) {}
 
   ngOnInit(): void {
     this._createForm();
+    this.userSearch.valueChanges.pipe(debounceTime(300)).subscribe(console.log);
   }
 
   private _createForm() {
