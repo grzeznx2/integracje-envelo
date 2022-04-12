@@ -21,5 +21,12 @@
       Pole wymagane
     </div>
   </ng-container>
+  <label for="event-start-time">Godzina rozpoczęcia:</label>
+  <input id="event-start-time" type="time" formControlName="startTime">
+  <ng-container *ngIf="firstForm.controls['startTime'].touched">
+    <div *ngIf="firstForm.controls['startTime'].errors?.['required']">
+      Pole wymagane
+    </div>
+  </ng-container>
   <button [disabled]="firstForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
 </form>
