@@ -10,6 +10,8 @@ import { EventItemComponent } from './events/event-item/event-item.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MyEventsComponent } from './events/my-events/my-events.component';
 import { PastEventsComponent } from './events/past-events/past-events.component';
+import { CreatorComponent } from './events/creator/creator.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,15 @@ import { PastEventsComponent } from './events/past-events/past-events.component'
     EventItemComponent,
     NavigationComponent,
     MyEventsComponent,
-    PastEventsComponent
+    PastEventsComponent,
+    CreatorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
