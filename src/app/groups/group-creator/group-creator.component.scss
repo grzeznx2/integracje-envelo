@@ -1,0 +1,14 @@
+.group-creator {
+  display: flex;
+
+  &__user {
+    display: block;
+    margin-top: 1rem;
+    width: 12rem;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary-red);
+    border-radius: 5px;
+    color: white;
+  }
+}
