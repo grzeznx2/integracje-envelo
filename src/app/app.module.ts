@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventItemComponent } from './events/event-item/event-item.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { EventItemComponent } from './events/event-item/event-item.component';
     HeaderComponent,
     EventListComponent,
     EventItemComponent,
+    NavigationComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
