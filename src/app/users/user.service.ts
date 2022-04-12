@@ -24,4 +24,10 @@ export class UserService {
       .pipe(tap(console.log))
       .subscribe((users) => this.users$.next(users));
   }
+
+  public getUsersBySecondName(secondName: string) {
+    this.http
+      .get<User[]>(`http://localhost:3000/users?secondName=${secondName}`)
+      .subscribe((users) => this.users$.next(users));
+  }
 }
