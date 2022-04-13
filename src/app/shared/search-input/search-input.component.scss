@@ -1,0 +1,30 @@
+.search-input {
+  position: relative;
+  display: inline-block;
+
+  &__input {
+    min-width: 20rem;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  &__results {
+    background-color: white;
+    box-shadow: var(--border-shadow);
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    list-style: none;
+  }
+
+  &__result {
+    cursor: pointer;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: var(--color-primary-red);
+      color: white;
+    }
+  }
+}

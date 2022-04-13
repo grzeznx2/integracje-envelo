@@ -11,11 +11,11 @@
   <div class="creator__panel creator--right">
     <form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="firstFormSubmit()">
       <div class="input__container">
-        <label for="event-name" class="input__label">Nazwa:</label>
+        <label for="event-title" class="input__label">Nazwa:</label>
         <div>
-          <input id="event-name" class="input" type="text" formControlName="name">
-          <ng-container *ngIf="firstForm.controls['name'].touched">
-            <div *ngIf="firstForm.controls['name'].errors?.['required']" class="input__msg--error">
+          <input id="event-title" class="input" type="text" formControlName="title">
+          <ng-container *ngIf="firstForm.controls['title'].touched">
+            <div *ngIf="firstForm.controls['title'].errors?.['required']" class="input__msg--error">
               Pole wymagane
             </div>
           </ng-container>
@@ -138,7 +138,12 @@
       <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
     </form>
 
-    <form [formGroup]="thirdForm" *ngIf="step===3">
+    <form [formGroup]="thirdForm" *ngIf="step===3" (ngSubmit)="thirdFormSubmit()">
+      <div class="input__container">
+        <label class="input__label">Wybrane grupy:</label>
+        <app-search-input (selectedItemEvent)="addGroup($event)" *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
+      </div>
+      <div *ngFor="let group of selectedGroups">{{group.name}} <button (click)="removeGroup(group)" class="btn btn__primary btn__small">X</button></div>
       <div class="input__container">
         <label for="event-min-members" class="input__label">Min. liczba osób:</label>
         <input id="event-min-members" class="input" type="number" formControlName="minMembers">
@@ -153,7 +158,6 @@
         <label for="event-deadline-decision" class="input__label">Deadline odpowiedzi:</label>
         <input id="event-deadline-decision" class="input" type="date" formControlName="deadlineDecision">
       </div>
-
 
       <button [disabled]="thirdForm.invalid" class="btn btn__primary btn__medium">Publikuj</button>
     </form>

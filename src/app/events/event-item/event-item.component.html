@@ -2,7 +2,7 @@
   <a routerLink="{{id}}/details">
   <div class="event-item__name">{{title}}</div>
 </a>
-  <div class="event-item__address">{{address}}</div>
+  <div class="event-item__address">{{eventPlace.street}} {{eventPlace.streetNumber}} / {{eventPlace.localNumber}}, {{eventPlace.postcode}} {{eventPlace.city}}</div>
   <div class="event-item__date-container">
     <span class="event-item__date">{{startDate | date: 'medium'}}</span>
   </div>
