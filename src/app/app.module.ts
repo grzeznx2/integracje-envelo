@@ -17,7 +17,13 @@ import { GroupCreatorComponent } from './groups/group-creator/group-creator.comp
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { PostCreatorComponent } from './posts/post-creator/post-creator.component';
 import { EventInformationsComponent } from './events/event-informations/event-informations.component';
+
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { FormSwitchComponent } from './auth/form-switch/form-switch.component';
+
 import { SearchInputComponent } from './shared/search-input/search-input.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +40,10 @@ import { SearchInputComponent } from './shared/search-input/search-input.compone
     EventDetailsComponent,
     PostCreatorComponent,
     EventInformationsComponent,
+
+    RegisterComponent,
+    LoginComponent,
+    FormSwitchComponent,
     SearchInputComponent,
   ],
   imports: [

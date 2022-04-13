@@ -1,0 +1,10 @@
+<div class="form-switch">
+  <h2 class="form-switch__title">
+    {{ isRegisterMode ? "Rejestracja" : "Logowanie" }}
+  </h2>
+  <app-register *ngIf="isRegisterMode"></app-register>
+  <app-login *ngIf="!isRegisterMode"></app-login>
+  <button class="form-switch__button" (click)="toggleAuthMode()">
+    {{ isRegisterMode ? "Logowanie" : "Rejestracja" }}
+  </button>
+</div>
