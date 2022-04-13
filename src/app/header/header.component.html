@@ -4,6 +4,11 @@
       <img src="assets/images/envelo_logo.png" alt="logo Envelo" class="header__logo-img" />
     </a>
     <ng-container *ngIf="user$ | async">
+      <button class="header__menu" (click)="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="header__nav">
 
         <app-navigation></app-navigation>

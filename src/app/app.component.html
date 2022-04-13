@@ -1,7 +1,5 @@
-<!-- <div class="sidebar-container"> -->
-  <app-sidebar></app-sidebar>
-<!-- </div> -->
-<app-header>
+<app-sidebar [showSidebar]="showSidebar" (sidebarToggled)="toggleShowSidebar()"></app-sidebar>
+<app-header (sidebarToggled)="toggleShowSidebar()">
   <app-navigation></app-navigation>
 </app-header>
 <main class="main">

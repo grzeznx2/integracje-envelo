@@ -1,4 +1,5 @@
-<nav class="sidebar">
+<nav class="sidebar" *ngIf="showSidebar">
+  <button class="sidebar__close-button" (click)="toggleSidebar()">X</button>
   <a class="sidebar__link" routerLink="/invitations">Zaproszenia</a>
   <a class="sidebar__link" routerLink="/creator">Kreator</a>
   <a class="sidebar__link" routerLink="/groups">Grupy</a>

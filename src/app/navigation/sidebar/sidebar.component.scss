@@ -9,6 +9,18 @@
   display: flex;
   flex-direction: column;
 
+  &__close-button {
+    position: relative;
+    display: block;
+    left: 80%;
+    top: 3.1rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+  }
+
   &__link {
     padding: 1rem;
 
