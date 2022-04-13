@@ -1,94 +1,163 @@
 <div class="creator">
-  <div class="creator__left">Jesteśmy teraz na {{step}} kroku</div>
-  <div class="creator__right">
+  <div class="creator__panel creator--left">
+    <div>
+      <p class="creator__step-number">
+        {{step}}
+      </p>
+      <p class="creator__title">Dodawanie</p>
+      <p class="creator__title">wydarzenia</p>
+    </div>
+  </div>
+  <div class="creator__panel creator--right">
     <form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="firstFormSubmit()">
-      <label for="event-name">Nazwa:</label>
-      <input id="event-name" type="text" formControlName="name">
-      <ng-container *ngIf="firstForm.controls['name'].touched">
-        <div *ngIf="firstForm.controls['name'].errors?.['required']">
-          Pole wymagane
+      <div class="input__container">
+        <label for="event-title" class="input__label">Nazwa:</label>
+        <div>
+          <input id="event-title" class="input" type="text" formControlName="title">
+          <ng-container *ngIf="firstForm.controls['title'].touched">
+            <div *ngIf="firstForm.controls['title'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-descritpion">Opis:</label>
-      <textarea id="event-descritpion" type="text" formControlName="description"></textarea>
-      <ng-container *ngIf="firstForm.controls['description'].touched">
-        <div *ngIf="firstForm.controls['description'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-descritpion" class="input__label">Opis:</label>
+        <div>
+          <textarea id="event-descritpion" class="input" type="text" formControlName="description"></textarea>
+          <ng-container *ngIf="firstForm.controls['description'].touched">
+            <div *ngIf="firstForm.controls['description'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-start-date">Data rozpoczęcia:</label>
-      <input id="event-start-date" type="date" formControlName="startDate">
-      <ng-container *ngIf="firstForm.controls['startDate'].touched">
-        <div *ngIf="firstForm.controls['startDate'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-start-date" class="input__label">Data rozpoczęcia:</label>
+        <div>
+          <input id="event-start-date" class="input" type="date" formControlName="startDate">
+          <ng-container *ngIf="firstForm.controls['startDate'].touched">
+            <div *ngIf="firstForm.controls['startDate'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-start-time">Godzina rozpoczęcia:</label>
-      <input id="event-start-time" type="time" formControlName="startTime">
-      <ng-container *ngIf="firstForm.controls['startTime'].touched">
-        <div *ngIf="firstForm.controls['startTime'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-start-time" class="input__label">Godzina rozpoczęcia:</label>
+        <div>
+          <input id="event-start-time" class="input" type="time" formControlName="startTime">
+          <ng-container *ngIf="firstForm.controls['startTime'].touched">
+            <div *ngIf="firstForm.controls['startTime'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
+      </div>
+
       <button [disabled]="firstForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
     </form>
 
 
     <form [formGroup]="secondForm" *ngIf="step===2" (ngSubmit)="secondFormSubmit()">
-      <label for="event-city">Miejscowość:</label>
-      <input id="event-city" type="text" formControlName="city">
-      <ng-container *ngIf="secondForm.controls['city'].touched">
-        <div *ngIf="secondForm.controls['city'].errors?.['required']">
-          Pole wymagane
+      <div class="input__container">
+        <label for="event-city" class="input__label">Miejscowość:</label>
+        <div>
+          <input id="event-city" class="input" type="text" formControlName="city">
+          <ng-container *ngIf="secondForm.controls['city'].touched">
+            <div *ngIf="secondForm.controls['city'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-place-name">Nazwa miejsca:</label>
-      <input id="event-place-name" type="text" formControlName="placeName">
-      <ng-container *ngIf="secondForm.controls['placeName'].touched">
-        <div *ngIf="secondForm.controls['placeName'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-place-name" class="input__label">Nazwa miejsca:</label>
+        <div>
+          <input id="event-place-name" class="input" type="text" formControlName="placeName">
+          <ng-container *ngIf="secondForm.controls['placeName'].touched">
+            <div *ngIf="secondForm.controls['placeName'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-street">Ulica:</label>
-      <input id="event-street" type="text" formControlName="street">
-      <ng-container *ngIf="secondForm.controls['street'].touched">
-        <div *ngIf="secondForm.controls['street'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-street" class="input__label">Ulica:</label>
+        <div>
+          <input id="event-street" class="input" type="text" formControlName="street">
+          <ng-container *ngIf="secondForm.controls['street'].touched">
+            <div *ngIf="secondForm.controls['street'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-street-number">Nr domu:</label>
-      <input id="event-street-number" type="text" formControlName="streetNumber">
-      <ng-container *ngIf="secondForm.controls['streetNumber'].touched">
-        <div *ngIf="secondForm.controls['streetNumber'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-street-number" class="input__label">Nr domu:</label>
+        <div>
+          <input id="event-street-number" class="input" type="text" formControlName="streetNumber">
+          <ng-container *ngIf="secondForm.controls['streetNumber'].touched">
+            <div *ngIf="secondForm.controls['streetNumber'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-local-number">Nr mieszkania:</label>
-      <input id="event-local-number" type="text" formControlName="localNumber">
-      <ng-container *ngIf="secondForm.controls['localNumber'].touched">
-        <div *ngIf="secondForm.controls['localNumber'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-local-number" class="input__label">Nr mieszkania:</label>
+        <div>
+          <input id="event-local-number" class="input" type="text" formControlName="localNumber">
+          <ng-container *ngIf="secondForm.controls['localNumber'].touched">
+            <div *ngIf="secondForm.controls['localNumber'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-      <label for="event-post-code">Kod pocztowy:</label>
-      <input id="event-post-code" type="text" formControlName="postcode">
-      <ng-container *ngIf="secondForm.controls['postcode'].touched">
-        <div *ngIf="secondForm.controls['postcode'].errors?.['required']">
-          Pole wymagane
+      </div>
+
+      <div class="input__container">
+        <label for="event-post-code" class="input__label">Kod pocztowy:</label>
+        <div>
+          <input id="event-post-code" class="input" type="text" formControlName="postcode">
+          <ng-container *ngIf="secondForm.controls['postcode'].touched">
+            <div *ngIf="secondForm.controls['postcode'].errors?.['required']" class="input__msg--error">
+              Pole wymagane
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
+      </div>
+
       <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
     </form>
 
-    <form [formGroup]="thirdForm" *ngIf="step===3">
-      <label for="event-min-members">Min. liczba osób:</label>
-      <input id="event-min-members" type="number" formControlName="minMembers">
+    <form [formGroup]="thirdForm" *ngIf="step===3" (ngSubmit)="thirdFormSubmit()">
+      <div class="input__container">
+        <label class="input__label">Wybrane grupy:</label>
+        <app-search-input (selectedItemEvent)="addGroup($event)" *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
+      </div>
+      <div *ngFor="let group of selectedGroups">{{group.name}} <button (click)="removeGroup(group)" class="btn btn__primary btn__small">X</button></div>
+      <div class="input__container">
+        <label for="event-min-members" class="input__label">Min. liczba osób:</label>
+        <input id="event-min-members" class="input" type="number" formControlName="minMembers">
+      </div>
 
-      <label for="event-max-members">Max. liczba osób:</label>
-      <input id="event-max-members" type="number" formControlName="maxMembers">
+      <div class="input__container">
+        <label for="event-max-members" class="input__label">Max. liczba osób:</label>
+        <input id="event-max-members" class="input" type="number" formControlName="maxMembers">
+      </div>
 
-      <label for="event-deadline-decision">Deadline odpowiedzi:</label>
-      <input id="event-deadline-decision" type="date" formControlName="deadlineDecision">
+      <div class="input__container">
+        <label for="event-deadline-decision" class="input__label">Deadline odpowiedzi:</label>
+        <input id="event-deadline-decision" class="input" type="date" formControlName="deadlineDecision">
+      </div>
 
       <button [disabled]="thirdForm.invalid" class="btn btn__primary btn__medium">Publikuj</button>
     </form>

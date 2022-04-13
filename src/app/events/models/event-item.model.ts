@@ -1,3 +1,5 @@
+import { EventPlace } from './event-details.model';
+
 export type Decision = 'YES' | 'NO' | 'MAYBE' | 'NOT DECIDED';
 
 export interface EventItem {
@@ -5,6 +7,6 @@ export interface EventItem {
   title: string;
   startDate: Date;
   startTime: Date;
-  address: string;
+  eventPlace: EventPlace;
   decision: Decision;
 }

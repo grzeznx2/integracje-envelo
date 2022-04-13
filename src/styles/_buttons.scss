@@ -47,9 +47,9 @@
   }
 
   &:disabled {
-    background-color: var(--color-secondary-gray-3);
-    color: var(--color-secondary-gray-4);
-    border: 0.1rem solid var(--color-secondary-gray-3);
+    background-color: var(--color-secondary-gray-4);
+    color: var(--color-secondary-gray-5);
+    border: 0.1rem solid var(--color-secondary-gray-4);
     cursor: default;
 
     &:active {

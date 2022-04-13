@@ -1,8 +1,75 @@
 .creator {
   display: flex;
-  &__left {
-    background-color: red;
+  flex-direction: row;
+  justify-content: center;
+
+  &__panel {
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    display: flex;
   }
-  &__right {
+
+  &--left {
+    width: 30rem;
+    flex-direction: row;
+    margin-right: 3rem;
+  }
+
+  &--right {
+    width: 50rem;
+    flex-direction: column;
+    padding-right: 5rem;
+  }
+
+  &__step-number {
+    font-family: "Roboto Slab", serif;
+    font-size: 19.5rem;
+    color: rgba(0, 0, 0, 0.1);
+    padding-left: 5rem;
+    position: relative;
+    top: 7rem;
+    right: 4rem;
+    cursor: default;
+    line-height: 0;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secondary-gray-1);
+    position: relative;
+    top: 4rem;
+    left: 8rem;
+    cursor: default;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+
+    label {
+      margin-right: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .input {
+      min-width: 20rem;
+      margin-top: 1.5rem;
+      margin-right: 1.5rem;
+
+      &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    button {
+      margin-top: 2rem;
+      margin-right: 1.5rem;
+    }
   }
 }
