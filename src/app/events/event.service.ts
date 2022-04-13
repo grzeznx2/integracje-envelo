@@ -24,6 +24,12 @@ export class EventService {
     this.getEvents();
   }
 
+  public createEvent(event: Partial<EventDetails>) {
+    this.http
+      .post(`http://localhost:3000/events`, event)
+      .subscribe(console.log);
+  }
+
   public getEventById(id: number) {
     this.http
       .get<EventDetails[]>(`http://localhost:3000/events?id=${id}`)

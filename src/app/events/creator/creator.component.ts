@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { GroupService } from 'src/app/groups/group.service';
 import { Group } from 'src/app/groups/models/group.model';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-creator',
@@ -10,14 +11,18 @@ import { Group } from 'src/app/groups/models/group.model';
   styleUrls: ['./creator.component.scss'],
 })
 export class CreatorComponent implements OnInit {
-  public step = 3;
+  public step = 1;
   public firstForm!: FormGroup;
   public secondForm!: FormGroup;
   public thirdForm!: FormGroup;
   public groups$: Observable<Group[]> = of([]);
   public selectedGroups: Group[] = [];
 
-  constructor(private fb: FormBuilder, private groupService: GroupService) {}
+  constructor(
+    private fb: FormBuilder,
+    private groupService: GroupService,
+    private eventService: EventService
+  ) {}
 
   ngOnInit(): void {
     this._createFirstForm();
@@ -58,14 +63,17 @@ export class CreatorComponent implements OnInit {
     Object.keys(this.firstForm.value).forEach((key) => {
       obj[key] = this.firstForm.value[key];
     });
-    Object.keys(this.secondForm.value).forEach((key) => {
-      obj[key] = this.secondForm.value[key];
-    });
+    obj['eventPlace'] = { ...this.secondForm.value };
+    // Object.keys(this.secondForm.value).forEach((key) => {
+    //   obj[key] = this.secondForm.value[key];
+    // });
     Object.keys(this.thirdForm.value).forEach((key) => {
       obj[key] = this.thirdForm.value[key];
     });
     obj['selectedGroups'] = this.selectedGroups;
-    console.log(obj);
+    obj['status'] = 'ACTIVE';
+    obj['decision'] = 'NOT DECIDED';
+    this.eventService.createEvent(obj);
   }
 
   nextStep() {
