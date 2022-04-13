@@ -1,8 +1,8 @@
 <nav class="sidebar" *ngIf="showSidebar">
   <button class="sidebar__close-button" (click)="toggleSidebar()">X</button>
-  <a class="sidebar__link" routerLink="/invitations">Zaproszenia</a>
-  <a class="sidebar__link" routerLink="/creator">Kreator</a>
-  <a class="sidebar__link" routerLink="/groups">Grupy</a>
-  <a class="sidebar__link" routerLink="/my-events">Moje wydarzenia</a>
-  <a class="sidebar__link" routerLink="/past-events">Wydarzenia archiwalne</a>
+  <a (click)="toggleSidebar()" class="sidebar__link" routerLink="/invitations">Zaproszenia</a>
+  <a (click)="toggleSidebar()" class="sidebar__link" routerLink="/creator">Kreator</a>
+  <a (click)="toggleSidebar()" class="sidebar__link" routerLink="/groups">Grupy</a>
+  <a (click)="toggleSidebar()" class="sidebar__link" routerLink="/my-events">Moje wydarzenia</a>
+  <a (click)="toggleSidebar()" class="sidebar__link" routerLink="/past-events">Wydarzenia archiwalne</a>
 </nav>
