@@ -4,7 +4,6 @@
       <img src="assets/images/envelo_logo.png" alt="logo Envelo" class="header__logo-img" />
     </a>
     <ng-container *ngIf="user$ | async">
-
       <app-navigation></app-navigation>
       <button class="btn btn__primary btn__medium" (click)="logout()">Wyloguj</button>
     </ng-container>

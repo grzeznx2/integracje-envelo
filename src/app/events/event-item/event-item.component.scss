@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 0.063rem solid var(--color-secondary-gray-4);
 
   & > * {
     padding: 1rem;
@@ -25,5 +26,9 @@
     font-size: 1.2rem;
     padding: 0.5rem 0.6rem;
     color: var(--color-primary-red);
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-secondary-gray-1);
   }
 }
