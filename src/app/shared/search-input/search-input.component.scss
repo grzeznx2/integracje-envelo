@@ -13,5 +13,10 @@
   &__result {
     cursor: pointer;
     padding: 0.5rem;
+
+    &:hover {
+      background-color: var(--color-primary-red);
+      color: white;
+    }
   }
 }
