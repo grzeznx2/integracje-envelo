@@ -9,6 +9,8 @@
   }
 
   &__results {
+    background-color: white;
+    box-shadow: var(--border-shadow);
     position: absolute;
     width: 100%;
     top: 100%;
