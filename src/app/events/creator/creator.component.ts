@@ -10,7 +10,7 @@ import { Group } from 'src/app/groups/models/group.model';
   styleUrls: ['./creator.component.scss'],
 })
 export class CreatorComponent implements OnInit {
-  public step = 1;
+  public step = 3;
   public firstForm!: FormGroup;
   public secondForm!: FormGroup;
   public thirdForm!: FormGroup;
