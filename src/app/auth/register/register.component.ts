@@ -22,9 +22,11 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     const { isAdmin, ...rest } = this.registerForm.value;
-    this.authService
-      .register({ ...rest, roles: isAdmin ? ['USER', 'AUTHOR'] : ['USER'] })
-      .subscribe();
+    this.authService.register({
+      ...rest,
+      roles: isAdmin ? ['USER', 'AUTHOR'] : ['USER'],
+    });
+    // .subscribe();
   }
 
   private _createForm() {

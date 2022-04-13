@@ -19,6 +19,7 @@ import { PostCreatorComponent } from './posts/post-creator/post-creator.componen
 import { EventInformationsComponent } from './events/event-informations/event-informations.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { FormSwitchComponent } from './auth/form-switch/form-switch.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LoginComponent } from './auth/login/login.component';
     EventInformationsComponent,
     RegisterComponent,
     LoginComponent,
+    FormSwitchComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable, take, tap } from 'rxjs';
 import { RegisterData } from './models/register-data.model';
 
 @Injectable({
@@ -9,7 +10,13 @@ import { RegisterData } from './models/register-data.model';
 export class AuthService {
   private user$ = new BehaviorSubject<RegisterData | null>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this._initializeUser();
+  }
+
+  get user(): Observable<RegisterData | null> {
+    return this.user$;
+  }
 
   setUser(user: RegisterData | null) {
     let destination: string;
@@ -18,6 +25,7 @@ export class AuthService {
       destination = 'auth';
     } else {
       localStorage.setItem('user', JSON.stringify(user));
+      destination = 'invitations';
       // if(user.roles.includes('AUTHOR')){
 
       //   destination = 'dashboard/author/add-recipe'
@@ -27,12 +35,33 @@ export class AuthService {
       // }
     }
     this.user$.next(user);
-    // this.router.navigate([destination])
+    this.router.navigate([destination]);
   }
 
   register(user: RegisterData) {
-    return this.http
-      .post('http://localhost:3000/users', user)
-      .pipe(tap(() => this.setUser(user)));
+    this.http
+      .post<RegisterData>('http://localhost:3000/users', user)
+      .subscribe((user) => this.setUser(user));
+    // .pipe(tap(() => this.setUser(user)));
+  }
+
+  login(user: RegisterData) {
+    this.http
+      .get<RegisterData[]>(
+        `http://localhost:3000/users?email=${user.email}&password=${user.password}`
+      )
+      .pipe(take(1))
+      .subscribe((res) => this.setUser(res[0]));
+  }
+
+  logout() {
+    this.setUser(null);
+  }
+
+  private _initializeUser() {
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.setUser(JSON.parse(user));
+    }
   }
 }
