@@ -2,13 +2,13 @@
   <h2 class="event-list__heading">Lista wydarzeń, na które zostałeś zaproszony</h2>
   <ng-container *ngIf="events$ | async as events">
     <div class="event-list__container">
-      <div class="event-list__header">
-        <p>Nazwa wydarzenia</p>
-        <p>Adres</p>
-        <p>Data i godzina rozpoczęcia</p>
-        <p>Decyzja</p>
-      </div>
       <ng-container *ngIf="events.length > 0; else placeholder">
+        <div class="event-list__header">
+          <p>Nazwa wydarzenia</p>
+          <p>Adres</p>
+          <p>Data i godzina rozpoczęcia</p>
+          <p>Decyzja</p>
+        </div>
 
         <app-event-item *ngFor="let event of events"
         [id]="event.id"
