@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, ReplaySubject, tap } from 'rxjs';
 import { EventDetails } from './models/event-details.model';
 import { Decision, EventItem } from './models/event-item.model';
@@ -10,7 +12,11 @@ import { Decision, EventItem } from './models/event-item.model';
 export class EventService {
   private events$ = new BehaviorSubject<EventItem[]>([]);
   private event$ = new ReplaySubject<EventDetails>(1);
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   get events(): Observable<EventItem[]> {
     return this.events$;
@@ -25,9 +31,10 @@ export class EventService {
   }
 
   public createEvent(event: Partial<EventDetails>) {
-    this.http
-      .post(`http://localhost:3000/events`, event)
-      .subscribe(console.log);
+    this.http.post(`http://localhost:3000/events`, event).subscribe(() => {
+      this.toastr.success('Prawidłowo utworzono nowe wydarzenie!');
+      this.router.navigate(['invitations']);
+    });
   }
 
   public getEventById(id: number) {

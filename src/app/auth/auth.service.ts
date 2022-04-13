@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, take, tap } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject, catchError, Observable, of, take, tap } from 'rxjs';
 import { RegisterData } from './models/register-data.model';
 
 @Injectable({
@@ -10,7 +11,11 @@ import { RegisterData } from './models/register-data.model';
 export class AuthService {
   private user$ = new BehaviorSubject<RegisterData | null>(null);
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private toastr: ToastrService
+  ) {
     this._initializeUser();
   }
 
@@ -38,10 +43,23 @@ export class AuthService {
     this.router.navigate([destination]);
   }
 
+  handleError(err: any) {}
+
   register(user: RegisterData) {
     this.http
       .post<RegisterData>('http://localhost:3000/users', user)
-      .subscribe((user) => this.setUser(user));
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return of(err);
+        })
+      )
+      .subscribe((user) => {
+        this.toastr.success('Rejestracja przebiegła prawidłowo');
+        if (user instanceof HttpErrorResponse) {
+          return this.toastr.error('Wystąpił błąd w czasie rejestracji');
+        }
+        return this.setUser(user);
+      });
     // .pipe(tap(() => this.setUser(user)));
   }
 
