@@ -15,6 +15,7 @@ export class CreatorComponent implements OnInit {
   public secondForm!: FormGroup;
   public thirdForm!: FormGroup;
   public groups$: Observable<Group[]> = of([]);
+  public selectedGroups: Group[] = [];
 
   constructor(private fb: FormBuilder, private groupService: GroupService) {}
 
@@ -24,6 +25,10 @@ export class CreatorComponent implements OnInit {
     this._createThirdForm();
     this.groupService.init();
     this.groups$ = this.groupService.groups;
+  }
+
+  addGroup(group: Group) {
+    this.selectedGroups = [...this.selectedGroups, group];
   }
 
   firstFormSubmit() {
