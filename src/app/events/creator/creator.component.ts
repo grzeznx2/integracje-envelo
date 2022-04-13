@@ -35,6 +35,12 @@ export class CreatorComponent implements OnInit {
     this.selectedGroups = [...this.selectedGroups, group];
   }
 
+  removeGroup(group: Group) {
+    this.selectedGroups = this.selectedGroups.filter(
+      (filteredGroup) => filteredGroup !== group
+    );
+  }
+
   firstFormSubmit() {
     if (this.firstForm.valid) {
       this.nextStep();
