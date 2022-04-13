@@ -4,6 +4,17 @@
   box-shadow: var(--border-shadow);
   overflow: hidden;
 
+  &__nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
