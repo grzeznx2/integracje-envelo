@@ -53,6 +53,21 @@ export class CreatorComponent implements OnInit {
     }
   }
 
+  thirdFormSubmit() {
+    const obj: { [key: string]: any } = {};
+    Object.keys(this.firstForm.value).forEach((key) => {
+      obj[key] = this.firstForm.value[key];
+    });
+    Object.keys(this.secondForm.value).forEach((key) => {
+      obj[key] = this.secondForm.value[key];
+    });
+    Object.keys(this.thirdForm.value).forEach((key) => {
+      obj[key] = this.thirdForm.value[key];
+    });
+    obj['selectedGroups'] = this.selectedGroups;
+    console.log(obj);
+  }
+
   nextStep() {
     this.step++;
   }

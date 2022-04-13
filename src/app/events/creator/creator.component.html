@@ -138,7 +138,7 @@
       <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
     </form>
 
-    <form [formGroup]="thirdForm" *ngIf="step===3">
+    <form [formGroup]="thirdForm" *ngIf="step===3" (ngSubmit)="thirdFormSubmit()">
       <div class="input__container">
         <label class="input__label">Wybrane grupy:</label>
         <app-search-input (selectedItemEvent)="addGroup($event)" *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
