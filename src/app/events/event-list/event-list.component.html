@@ -8,14 +8,22 @@
         <p>Data i godzina rozpoczęcia</p>
         <p>Decyzja</p>
       </div>
-      <app-event-item *ngFor="let event of events"
-      [id]="event.id"
-      [title]="event.title"
-      [eventPlace]="event.eventPlace"
-      [startDate]="event.startDate"
-      [startTime]="event.startTime"
-      [decision]="event.decision"
-      ></app-event-item>
+      <ng-container *ngIf="events.length > 0; else placeholder">
+
+        <app-event-item *ngFor="let event of events"
+        [id]="event.id"
+        [title]="event.title"
+        [eventPlace]="event.eventPlace"
+        [startDate]="event.startDate"
+        [startTime]="event.startTime"
+        [decision]="event.decision"
+        ></app-event-item>
+      </ng-container>
     </div>
     </ng-container>
   </div>
+  <ng-template #placeholder>
+    <div class="event-list__placeholder">
+      <p>Niestety nie zostałeś jeszcze zaproszony na żadne wydarzenie :(</p>
+    </div>
+  </ng-template>
