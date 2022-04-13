@@ -23,6 +23,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { FormSwitchComponent } from './auth/form-switch/form-switch.component';
 
 import { SearchInputComponent } from './shared/search-input/search-input.component';
+import { SidebarComponent } from './navigation/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { SearchInputComponent } from './shared/search-input/search-input.compone
     LoginComponent,
     FormSwitchComponent,
     SearchInputComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
