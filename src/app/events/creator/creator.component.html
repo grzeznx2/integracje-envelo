@@ -9,6 +9,7 @@
     </div>
   </div>
   <div class="creator__panel creator--right">
+    <app-search-input *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
     <form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="firstFormSubmit()">
       <div class="input__container">
         <label for="event-name" class="input__label">Nazwa:</label>

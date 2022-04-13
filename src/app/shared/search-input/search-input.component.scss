@@ -1,0 +1,17 @@
+.search-input {
+  position: relative;
+  display: inline-block;
+
+  &__results {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    list-style: none;
+  }
+
+  &__result {
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+}
