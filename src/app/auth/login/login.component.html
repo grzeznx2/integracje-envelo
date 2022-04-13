@@ -2,20 +2,20 @@
   <div class="form__group">
     <label class="form__label" for="login-email">Email:</label>
     <input
-      class="form__input"
+      class="input"
       id="login-email"
       type="text"
       formControlName="email"
     />
     <ng-container *ngIf="loginForm.controls['email'].touched">
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="loginForm.controls['email'].errors?.['required']"
       >
         Pole wymagane
       </div>
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="loginForm.controls['email'].errors?.['email']"
       >
         Podaj prawidłowy adres email
@@ -23,22 +23,22 @@
     </ng-container>
   </div>
   <div class="form__group">
-    <label class="form__label" for="login-password">Password:</label>
+    <label class="form__label" for="login-password">Hasło:</label>
     <input
-      class="form__input"
+      class="input"
       id="login-password"
       type="password"
       formControlName="password"
     />
     <ng-container *ngIf="loginForm.controls['password'].touched">
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="loginForm.controls['password'].errors?.['required']"
       >
         Pole wymagane
       </div>
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="loginForm.controls['password'].errors?.['minlength']"
       >
         Minimalna długość hasła wynosi
@@ -47,8 +47,10 @@
       </div>
     </ng-container>
   </div>
+<div class="form__group">
 
-  <button [disabled]="loginForm.invalid" class="button button--primary">
-    Submit
+  <button [disabled]="loginForm.invalid" class="btn btn__primary btn__medium">
+    Zaloguj
   </button>
+</div>
 </form>
