@@ -28,6 +28,10 @@ export class CreatorComponent implements OnInit {
   }
 
   addGroup(group: Group) {
+    const groupExist = this.selectedGroups.find(
+      (searchedGroup) => searchedGroup === group
+    );
+    if (groupExist) return;
     this.selectedGroups = [...this.selectedGroups, group];
   }
 
