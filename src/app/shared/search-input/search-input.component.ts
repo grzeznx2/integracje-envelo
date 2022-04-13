@@ -9,6 +9,7 @@ export class SearchInputComponent implements OnInit {
   @Input() data!: any[];
   @Input() field!: string;
   @Output() selectedItemEvent = new EventEmitter<any>();
+  public displayOptions = false;
 
   constructor() {}
 
@@ -16,5 +17,9 @@ export class SearchInputComponent implements OnInit {
 
   selectItem(item: any) {
     this.selectedItemEvent.emit(item);
+  }
+
+  toggleDisplayOptions() {
+    this.displayOptions = !this.displayOptions;
   }
 }

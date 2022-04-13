@@ -1,6 +1,6 @@
-<div class="search-input">
+<div class="search-input" (click)="toggleDisplayOptions()">
   <input type="search">
-  <ul class="search-input__results">
+  <ul class="search-input__results" *ngIf="displayOptions">
     <li (click)="selectItem(item)" class="search-input__result" *ngFor="let item of data">{{item[field]}}</li>
   </ul>
 </div>
