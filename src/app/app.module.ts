@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +27,6 @@ import { FormSwitchComponent } from './auth/form-switch/form-switch.component';
 
 import { SearchInputComponent } from './shared/search-input/search-input.component';
 import { SidebarComponent } from './navigation/sidebar/sidebar.component';
-
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { SidebarComponent } from './navigation/sidebar/sidebar.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

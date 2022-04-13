@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Group } from './models/group.model';
 
@@ -9,7 +10,7 @@ import { Group } from './models/group.model';
 export class GroupService {
   private groups$ = new BehaviorSubject<Group[]>([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   get groups(): Observable<Group[]> {
     return this.groups$;
@@ -20,9 +21,9 @@ export class GroupService {
   }
 
   public createGroup(group: Group) {
-    this.http
-      .post('http://localhost:3000/groups', group)
-      .subscribe(console.log);
+    this.http.post('http://localhost:3000/groups', group).subscribe(() => {
+      this.toastr.success('Pomyślnie dodano nową grupę');
+    });
   }
 
   public getGroups() {
