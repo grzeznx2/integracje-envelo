@@ -1,27 +1,37 @@
-
-<button (click)="createGroup()" [disabled]="form.invalid || selectedUsers.length === 0" class="btn btn__primary btn__medium">Dodaj</button>
-<div class="group-creator">
-  <div>
-
-  <form [formGroup]="form">
-    <label for="group-name">Nazwa:</label>
-    <input id="group-name" type="text" formControlName="name">
-    <ng-container *ngIf="form.controls['name'].touched">
-    <div *ngIf="form.controls['name'].errors?.['required']">
-      Pole wymagane
+<div class="creator__panel">
+  <div class="creator__container">
+    <div class="group-creator">
+      <div>
+        <form [formGroup]="form">
+          <label for="group-name" class="input__label">Nazwa:</label>
+          <div>
+            <input id="group-name" class="input" type="text" formControlName="name">
+            <ng-container *ngIf="form.controls['name'].touched">
+              <div *ngIf="form.controls['name'].errors?.['required']" class="input__msg--error">
+                Pole wymagane
+              </div>
+            </ng-container>
+          </div>
+        </form>
+        <div>
+          <label for="user-search" class="input__label">Wyszukaj użytkowników:</label>
+        <input id="user-search" class="input" type="search" [formControl]="userSearch">
+        </div>
+      </div>
+        <div>
+          <ng-container *ngIf="users$ | async as users">
+            <div class="group-creator__user" *ngFor="let user of users" (click)="selectUser(user)">
+              {{user.firstName}} {{user.secondName}}
+            </div>
+          </ng-container>
+        </div>
+      <div>
+        <p>Wybrani użytkownicy:</p>
+        <div class="group-creator__user" *ngFor="let user of selectedUsers" >{{user.firstName}} {{user.secondName}}
+          <span (click)="removeUser(user.id)" class="remove">&times;</span>
+        </div>
+      </div>
+      <button (click)="createGroup()" [disabled]="form.invalid || selectedUsers.length === 0" class="btn btn__primary btn__medium">Dodaj</button>
     </div>
-  </ng-container>
-</form>
-<label for="user-search">Wyszukaj użytkowników:</label>
-<input id="user-search" type="search" [formControl]="userSearch">
-<div>
-  <ng-container *ngIf="users$ | async as users">
-    <div class="group-creator__user" *ngFor="let user of users" (click)="selectUser(user)">{{user.firstName}} {{user.secondName}}</div>
-  </ng-container>
-</div>
-</div>
-<div>
-  Wybrani użytkownicy:
-  <div class="group-creator__user" *ngFor="let user of selectedUsers" >{{user.firstName}} {{user.secondName}} <button (click)="removeUser(user.id)">X</button></div>
-</div>
+  </div>
 </div>
