@@ -2,20 +2,20 @@
   <div class="form__group">
     <label class="form__label" for="register-email">Email:</label>
     <input
-      class="form__input"
+      class="input"
       id="register-email"
       type="text"
       formControlName="email"
     />
     <ng-container *ngIf="registerForm.controls['email'].touched">
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="registerForm.controls['email'].errors?.['required']"
       >
         Pole wymagane
       </div>
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="registerForm.controls['email'].errors?.['email']"
       >
         Podaj prawidłowy adres email
@@ -23,22 +23,22 @@
     </ng-container>
   </div>
   <div class="form__group">
-    <label class="form__label" for="register-password">Password:</label>
+    <label class="form__label" for="register-password">Hasło:</label>
     <input
-      class="form__input"
+      class="input"
       id="register-password"
       type="password"
       formControlName="password"
     />
     <ng-container *ngIf="registerForm.controls['password'].touched">
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="registerForm.controls['password'].errors?.['required']"
       >
         Pole wymagane
       </div>
       <div
-        class="form__error"
+        class="input__msg--error"
         *ngIf="registerForm.controls['password'].errors?.['minlength']"
       >
         Minimalna długość hasła wynosi
@@ -48,11 +48,13 @@
     </ng-container>
   </div>
   <div class="form__group form__group--inline">
-    <label class="form__label" for="register-admin">Register as admin:</label>
+    <label class="form__label" for="register-admin">Zarejestruj jako admin:</label>
     <input id="register-admin" type="checkbox" formControlName="isAdmin" />
   </div>
+<div class="form__group">
 
-  <button class="button button--primary" [disabled]="registerForm.invalid">
-    Submit
+  <button class="btn btn__primary btn__medium" [disabled]="registerForm.invalid">
+    Zarejestruj
   </button>
+</div>
 </form>
