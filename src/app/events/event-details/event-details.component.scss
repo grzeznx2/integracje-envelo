@@ -1,0 +1,17 @@
+.event-details {
+  &__container {
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    min-height: 25rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-secondary-gray-1);
+    font-weight: 700;
+    padding: 1rem;
+    border: 0.063rem solid var(--color-secondary-gray-4);
+    margin-bottom: 3rem;
+  }
+}
