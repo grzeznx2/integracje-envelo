@@ -1,12 +1,14 @@
-
+<div class="post-creator__container">
   <form [formGroup]="form">
-    <label for="post-description">Treść:</label>
-    <textarea id="post-description" type="text" formControlName="description"></textarea>
+    <div class="post-description__container">
+      <label for="post-description" class="input__label">Treść:</label>
+      <textarea id="post-description" class="input" type="text" formControlName="description"></textarea>
+    </div>
     <ng-container *ngIf="form.controls['description'].touched">
       <div *ngIf="form.controls['description'].errors?.['required']">
         Pole wymagane
       </div>
     </ng-container>
     <button [disabled]="form.invalid" class="btn btn__primary btn__medium">Dodaj</button>
-    </form>
-
+  </form>
+</div>

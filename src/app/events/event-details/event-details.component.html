@@ -1,8 +1,8 @@
 <ng-container *ngIf="event$ | async as event">
-  <div class="event-details">
+  <div class="event-details__container">
 
-    <a routerLink="details">Informacje</a>
-    <a routerLink="posts">Posty</a>
+    <a routerLink="details" class="event-details__link">Informacje</a>
+    <a routerLink="posts" class="event-details__link">Posty</a>
     <router-outlet></router-outlet>
   <!-- <div>Nazwa: {{event.title}}</div>
   <div>Podsumowanie: {{event.description}}</div>
