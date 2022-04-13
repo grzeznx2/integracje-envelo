@@ -11,11 +11,11 @@
   <div class="creator__panel creator--right">
     <form [formGroup]="firstForm" *ngIf="step===1" (ngSubmit)="firstFormSubmit()">
       <div class="input__container">
-        <label for="event-name" class="input__label">Nazwa:</label>
+        <label for="event-title" class="input__label">Nazwa:</label>
         <div>
-          <input id="event-name" class="input" type="text" formControlName="name">
-          <ng-container *ngIf="firstForm.controls['name'].touched">
-            <div *ngIf="firstForm.controls['name'].errors?.['required']" class="input__msg--error">
+          <input id="event-title" class="input" type="text" formControlName="title">
+          <ng-container *ngIf="firstForm.controls['title'].touched">
+            <div *ngIf="firstForm.controls['title'].errors?.['required']" class="input__msg--error">
               Pole wymagane
             </div>
           </ng-container>

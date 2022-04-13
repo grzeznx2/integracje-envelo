@@ -82,7 +82,7 @@ export class CreatorComponent implements OnInit {
 
   private _createFirstForm() {
     this.firstForm = this.fb.group({
-      name: ['', Validators.required],
+      title: ['', Validators.required],
       description: ['', Validators.required],
       startDate: ['', Validators.required],
       startTime: ['', Validators.required],
