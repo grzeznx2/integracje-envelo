@@ -4,6 +4,39 @@
   box-shadow: var(--border-shadow);
   overflow: hidden;
 
+  &__menu {
+    display: none;
+    margin-right: auto;
+    margin-left: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    span {
+      display: block;
+      border-radius: 2px;
+      width: 2rem;
+      height: 3px;
+      margin-bottom: 0.2rem;
+      background-color: black;
+    }
+
+    @media only screen and (max-width: 720px) {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { RegisterData } from '../auth/models/register-data.model';
@@ -10,6 +10,7 @@ import { RegisterData } from '../auth/models/register-data.model';
 })
 export class HeaderComponent implements OnInit {
   public user$: Observable<RegisterData | null> = of(null);
+  @Output() sidebarToggled = new EventEmitter<boolean>();
 
   constructor(private authService: AuthService) {}
 
@@ -19,5 +20,9 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  toggleSidebar() {
+    this.sidebarToggled.emit(true);
   }
 }
