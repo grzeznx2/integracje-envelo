@@ -12,10 +12,13 @@
   &__header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     border: 0.063rem solid var(--color-secondary-gray-4);
-    padding: 1.5rem;
     font-weight: 700;
+
+    &-element {
+      flex: 1;
+      padding: 1.5rem 1rem;
+    }
   }
 
   &__placeholder {
