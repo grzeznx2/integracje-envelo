@@ -143,7 +143,7 @@
         <label class="input__label">Wybrane grupy:</label>
         <app-search-input (selectedItemEvent)="addGroup($event)" *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
       </div>
-      <div *ngFor="let group of selectedGroups">{{group.name}} <button (click)="removeGroup(group)" class="btn btn--primary btn--small">X</button></div>
+      <div *ngFor="let group of selectedGroups" class="creator__group">{{group.name}} <span (click)="removeGroup(group)" class="remove">&times;</span></div>
       <div class="input__container">
         <label for="event-min-members" class="input__label">Min. liczba osób:</label>
         <input id="event-min-members" class="input" type="number" formControlName="minMembers">
