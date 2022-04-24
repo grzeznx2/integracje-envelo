@@ -6,7 +6,7 @@
   cursor: pointer;
   border: 0.1rem solid var(--color-primary-red);
 
-  &__primary {
+  &--primary {
     background-color: var(--color-primary-red);
     color: var(--color-primary-white);
 
@@ -16,7 +16,7 @@
     }
   }
 
-  &__secondary {
+  &--secondary {
     background-color: var(--color-primary-white);
     color: var(--color-primary-red);
 
@@ -26,15 +26,15 @@
     }
   }
 
-  &__small {
+  &--small {
     padding: 0.5rem 2rem;
   }
 
-  &__medium {
+  &--medium {
     padding: 0.75rem 2rem;
   }
 
-  &__large {
+  &--large {
     padding: 1rem 2rem;
   }
 
