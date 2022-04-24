@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <button [disabled]="firstForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
+      <button [disabled]="firstForm.invalid" class="btn btn--primary btn--medium">Dalej</button>
     </form>
 
 
@@ -135,7 +135,7 @@
         </div>
       </div>
 
-      <button [disabled]="secondForm.invalid" class="btn btn__primary btn__medium">Dalej</button>
+      <button [disabled]="secondForm.invalid" class="btn btn--primary btn--medium">Dalej</button>
     </form>
 
     <form [formGroup]="thirdForm" *ngIf="step===3" (ngSubmit)="thirdFormSubmit()">
@@ -143,7 +143,7 @@
         <label class="input__label">Wybrane grupy:</label>
         <app-search-input (selectedItemEvent)="addGroup($event)" *ngIf="groups$ | async as groups" [data]="groups" [field]="'name'"></app-search-input>
       </div>
-      <div *ngFor="let group of selectedGroups">{{group.name}} <button (click)="removeGroup(group)" class="btn btn__primary btn__small">X</button></div>
+      <div *ngFor="let group of selectedGroups">{{group.name}} <button (click)="removeGroup(group)" class="btn btn--primary btn--small">X</button></div>
       <div class="input__container">
         <label for="event-min-members" class="input__label">Min. liczba osób:</label>
         <input id="event-min-members" class="input" type="number" formControlName="minMembers">
@@ -159,7 +159,7 @@
         <input id="event-deadline-decision" class="input" type="date" formControlName="deadlineDecision">
       </div>
 
-      <button [disabled]="thirdForm.invalid" class="btn btn__primary btn__medium">Publikuj</button>
+      <button [disabled]="thirdForm.invalid" class="btn btn--primary btn--medium">Publikuj</button>
     </form>
 
   </div>
