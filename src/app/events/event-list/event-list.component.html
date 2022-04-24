@@ -4,10 +4,10 @@
     <div class="event-list__container">
       <ng-container *ngIf="events.length > 0; else placeholder">
         <div class="event-list__header">
-          <p>Nazwa wydarzenia</p>
-          <p>Adres</p>
-          <p>Data i godzina rozpoczęcia</p>
-          <p>Decyzja</p>
+          <p class="event-list__header-element">Nazwa wydarzenia</p>
+          <p class="event-list__header-element">Adres</p>
+          <p class="event-list__header-element">Data i godzina rozpoczęcia</p>
+          <p class="event-list__header-element">Decyzja</p>
         </div>
 
         <app-event-item *ngFor="let event of events"
