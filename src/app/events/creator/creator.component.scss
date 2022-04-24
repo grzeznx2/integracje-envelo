@@ -44,6 +44,20 @@
     cursor: default;
   }
 
+  &__group {
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    width: 15rem;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary-red);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -70,6 +84,11 @@
     button {
       margin-top: 2rem;
       margin-right: 1.5rem;
+    }
+
+    .remove {
+      font-size: 1.6rem;
+      margin-left: 1.5rem;
     }
   }
 }
